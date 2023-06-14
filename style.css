@@ -1,0 +1,88 @@
+/* LE MIE VARIABILI */
+:root{
+    --black : rgb(40,40,40);
+    --white : rgb(244,244,244);
+    --blue :  rgb(0, 119, 182);
+}
+
+.bg-blue {
+    background-color: var(--blue);
+}
+
+.color-blue {
+    color: var(--blue);
+}
+
+.margin-blue {
+    margin: var(--blue);
+}
+
+.bg-black {
+    background-color: var(--black);
+}
+
+.color-black {
+    color: var(--black);
+}
+
+.margin-black {
+    margin: var(--black);
+}
+
+.bg-w {
+    background-color: var(--white);
+}
+
+.color-w {
+    color: var(--white);
+}
+
+.margin-w {
+    margin: var(--white);
+}
+/* end variabili */
+
+
+/* Font */
+
+*{
+    font-family: 'Lato', sans-serif;
+    color: var(--white);
+}
+
+h1,h2,h3, .h1, .h2, .h3{
+     font-family: 'Electrolize', sans-serif;
+}
+
+.fontCustom{
+    font-family: 'Marck Script', cursive;
+}
+/* fine font */
+
+body{
+    background-color: var(--black);
+}
+
+/* navbar */
+.logo-custom{
+    width: 70px;
+}
+
+.nav-link{
+    color: var(--black);
+}
+
+
+.navbar{
+    transition: 0.5s;
+}
+/* navbar end */
+
+/* header */
+.searchbar{
+    height: 30px;
+    color: black;
+    border-radius: 25px;
+    padding-left: 10px;
+}
+/* header end */
