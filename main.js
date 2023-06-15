@@ -18,7 +18,7 @@ window.addEventListener('scroll', ()=> {
                 });
                 
             });
-
+            
             links.forEach(link => {
                 link.addEventListener('mouseout', ()=>{
                     link.style.color = 'var(--black)'
@@ -34,7 +34,7 @@ window.addEventListener('scroll', ()=> {
                     link.style.color = 'var(--blue)'
                 });
             });
-
+            
             links.forEach(link => {
                 link.addEventListener('mouseout', ()=>{
                     link.style.color = 'var(--black)'
@@ -55,21 +55,21 @@ let number3 = document.querySelector('#number3')
 
 function creatInterval(number,element,timing) {
     
-
-let counter = 0;
-let interval = setInterval(() => {
     
+    let counter = 0;
+    let interval = setInterval(() => {
+        
         if (counter < number) {
-        counter++;
-        element.innerHTML = counter;
+            counter++;
+            element.innerHTML = counter;
         }else{
-        clearInterval(interval);
+            clearInterval(interval);
         }
-    
-
+        
+        
     }, timing);
 }
-// increment number end
+
 
 let confirm = true;
 
@@ -81,13 +81,61 @@ let observer = new IntersectionObserver((entries)=>{
             creatInterval(50, number3,10);  
             confirm = false;
             setTimeout(()=>{
-            confirm = true; 
+                confirm = true; 
             }, 6000); 
         }else{
             
-
+            
         }
     });
 });
 
 observer.observe(number1)
+
+
+// increment number end
+
+// sezione carousel
+
+
+let swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+    },
+});
+
+
+
+let swiperWrapper = document.querySelector('.swiper-wrapper');
+let rewivers = [
+    {name: 'Leonardo', recensione: 'bel sito', rank : 5},
+    {name: 'Leonardo', recensione: 'bel sito', rank : 5},
+    {name: 'Leonardo', recensione: 'bel sito', rank : 5},
+    {name: 'Leonardo', recensione: 'bel sito', rank : 5},
+];
+
+rewivers.forEach(rewiver => {
+    let divSlide = document.createElement('div')
+    divSlide.classList.add('swiper-slide')
+    divSlide.innerHTML= `
+    
+                     <div class="d-flex flex-column justify-content-center  align-content-center text-center h-100 bg-info">
+                      <h3>${rewiver.name}</h3>
+                      <p>${rewiver.recensione}</p>
+                    </div>
+    `
+    swiperWrapper.appendChild(divSlide)
+});
+
+// fine sezione carousel
