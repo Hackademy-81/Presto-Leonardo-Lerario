@@ -5,6 +5,15 @@
     --blue :  rgb(0, 119, 182);
 }
 
+html{
+    overflow-x: hidden;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+
 .bg-blue {
     background-color: var(--blue);
 }
@@ -98,7 +107,7 @@ body{
     transform: scale(1.1);
 }
 
-/* paragrafi animation end  chiedere perchè non funziona*/
+/* paragrafi animation end  chiedere perchè non funziona chiedere anche questione responsive (overflow x)*/
 
 /* increment number */
 .number{
