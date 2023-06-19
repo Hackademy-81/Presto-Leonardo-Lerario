@@ -1,8 +1,8 @@
 /* LE MIE VARIABILI */
 :root{
     --black : rgb(40,40,40);
-    --white : rgb(244,244,244);
-    --blue :  rgb(0, 119, 182);
+    --white : #f4f4f4;
+    --blue :  #0077b6;
 }
 
 html{
@@ -135,3 +135,24 @@ body{
     width: 100%;
   }
 /* carousel end */
+/* sezione rewiews */
+.card-custom{
+    background-color: var(--blue);
+}
+
+.btn-custom{
+    color: var(--black);
+    background: rgb(244,244,244);
+background: linear-gradient(90deg, rgba(244,244,244,1) 50%, rgba(0,119,182,1) 50%);
+    padding: 10px 30px;
+    background-position: 0;
+    background-size: 200%;
+    transition: 0.7s;
+
+}
+
+.btn-custom:hover{
+    background-position: -110%;
+    color: white;
+}
+/* secione rewiews end */

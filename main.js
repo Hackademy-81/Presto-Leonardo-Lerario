@@ -98,6 +98,64 @@ observer.observe(number1)
 // sezione carousel
 
 
+
+
+
+let rewivers = [
+    {name: 'Leonardo', recensione: 'Un sito davvero fatto bene', rank : 5},
+    {name: 'Lynne', recensione: 'Si potrebbe fare di meglio', rank : 3},
+    {name: 'Stefano', recensione: 'Non mi piace tantissimo la grafica di questo sito', rank : 3},
+    {name: 'Bobby', recensione: 'Non mi dispiace, davvero fatto con tanta passione e cura', rank : 4},
+];
+
+
+let swiperWrapper = document.querySelector('.swiper-wrapper');
+
+function genereteRewiews() {
+
+    swiperWrapper.innerHTML= ''
+
+    rewivers.forEach(rewiver => {
+        let divSlide = document.createElement('div')
+        divSlide.classList.add('swiper-slide')
+        divSlide.innerHTML= `
+        
+                         <div class="d-flex flex-column justify-content-center  align-content-center text-center h-100 card-custom">
+                          <h3>${rewiver.name}</h3>
+                          <p>${rewiver.recensione}</p>
+                          <div class="star">
+                          </div>
+                        </div>
+        `
+        swiperWrapper.appendChild(divSlide)
+    });
+    
+    
+    let stars = document.querySelectorAll('.star');
+    
+    stars.forEach((div , j) => {
+        for (let i = 1; i <= rewivers[j].rank; i++) {
+            let icon = document.createElement('i');
+        icon.classList.add('fa-solid' , 'fa-star');
+        div.appendChild(icon);
+       }
+    
+       if (rewivers[j].rank < 5) {
+            let difference = 5 - rewivers[j].rank;
+            for (let i = 1; i <= difference; i++) {
+                let icon = document.createElement('i');
+            icon.classList.add('fa-regular' , 'fa-star');
+            div.appendChild(icon);
+           }
+       }
+        
+    });
+    
+}
+
+genereteRewiews()
+
+
 let swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
@@ -117,25 +175,28 @@ let swiper = new Swiper(".mySwiper", {
 
 
 
-let swiperWrapper = document.querySelector('.swiper-wrapper');
-let rewivers = [
-    {name: 'Leonardo', recensione: 'bel sito', rank : 5},
-    {name: 'Leonardo', recensione: 'bel sito', rank : 5},
-    {name: 'Leonardo', recensione: 'bel sito', rank : 5},
-    {name: 'Leonardo', recensione: 'bel sito', rank : 5},
-];
-
-rewivers.forEach(rewiver => {
-    let divSlide = document.createElement('div')
-    divSlide.classList.add('swiper-slide')
-    divSlide.innerHTML= `
-    
-                     <div class="d-flex flex-column justify-content-center  align-content-center text-center h-100 bg-info">
-                      <h3>${rewiver.name}</h3>
-                      <p>${rewiver.recensione}</p>
-                    </div>
-    `
-    swiperWrapper.appendChild(divSlide)
-});
-
 // fine sezione carousel
+
+// Add rewiew
+let userName = document.querySelector('#userName');
+let userRewiew = document.querySelector('#userRewiew');
+let userRank = document.querySelector('#userRank');
+let btnRewiew = document.querySelector('#buttonRewiew');
+
+btnRewiew.addEventListener('click', ()=>{
+    rewivers.push({name:userName.value, recensione: userRewiew.value, rank : userRank.value})
+
+genereteRewiews();
+
+swiper.update();
+
+userName.value = "";
+userRewiew.value = "";
+userRank.value = "";
+
+
+
+});
+// Add rewiew
+
+
