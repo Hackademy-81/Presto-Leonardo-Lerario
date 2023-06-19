@@ -156,3 +156,31 @@ background: linear-gradient(90deg, rgba(244,244,244,1) 50%, rgba(0,119,182,1) 50
     color: white;
 }
 /* secione rewiews end */
+
+
+/* PAGINA ANNUNCI */
+
+.accordion-button, .accordion-body{
+    background-color: #0077b6;
+    color: var(--white);
+}
+
+.accordion-button:not(.collapsed){
+    background-color: #0077b6;
+    color: var(--white);
+    box-shadow: none;
+}
+
+.announcement-card{
+    width: 30%;
+    height: 200px;
+    border: 2px solid white;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+/* PAGINA ANNUNCI END */
